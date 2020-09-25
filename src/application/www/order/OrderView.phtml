@@ -1,0 +1,50 @@
+<h2><i class="fas fa-shopping-cart"></i> Espace commande</h2>
+<table class="generic-table meal-list">
+        <caption>Faites votre choix</caption>
+    <tbody>
+        <!-- Code HTML à écrire -->
+        <?php foreach($this->viewData['variables']['products'] as $product): ?>
+            <tr>
+                <td><img src="<?= $wwwUrl ?>/images/meals/<?= $product['Photo'] ?>" alt="<?= $product['Name'] ?>"></td>
+                <td><strong id="name_<?= $product['Id'] ?>"><?= $product['Name'] ?></strong>
+                <p><?= $product['Description'] ?></p></td>
+                <td><strong id="prixT_<?= $product['Id'] ?>"><?= $product['SalePrice'] ?></strong><strong> €</strong></td>
+                    <?php if(isset($_SESSION['connexion'])): ?>
+            <td>
+                <label for="number">Quantités :</label>   
+                <input type="number" placeholder="quantités ?" name="number" id="qttProds_<?= $product['Id'] ?>"><br>
+                <button class="button button-second btnAddPanier" idProduit="<?= $product['Id'] ?>">Ajouter au panier</button>
+            </td>
+                <?php endif; ?>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+            <fieldset class="fieldset" id="qttProd">
+                <legend>
+                    <i class="fas fa-shopping-cart"></i> Votre panier
+                </legend>
+                <table class="generic-table meal-list" id="panier">
+                    <thead>
+                        <tr>
+                            <th>Produit(s)</th>
+                            <th>Quantité(s)</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parentButton">
+                        <!-- permet d'ajouter une seul ligne a chaque fois -->
+                        <!-- <tr>
+                            <td id="productName"></td>
+                            <td id="productQuantity"></td>
+                            <td id="productPrice"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <strong> PRIX TOTAL   : </strong><strong id="prixTotal"></strong><strong> €</strong>
+            </fieldset>
+        <a class="button button-primary" type="submit" id="creer" href="<?= $requestUrl ?>/order/validation">Valider</a>
+        <button class="button button-cancel" type="reset" id="supprimer">Annuler</button>
+    
+
+            

@@ -1,0 +1,37 @@
+<h2>Listes des utilisateurs</h2>
+    <table class="generic-table meal-list">
+    <caption>Utilisateurs</caption>
+        <thead>
+            <tr style="color:green">
+                <th>N° Client</th>
+                <th>Client</th>
+                <th>Adresse</th>
+                <th>Date de naissance</th>
+                <th>Ville</th>
+                <th>Tel</th>
+                <th>Admin</th>
+                <th>Autorisation</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($users as $user): ?>
+            <tr>
+                <td><?= $user['Id']; ?></td>
+                <td><?= $user['Nom']; ?> <?= $user['Prenom']; ?></td>
+                <td><?= $user['Adresse']; ?></td>
+                <td><?= $user['Date_de_naissance']; ?></td>
+                <td><?= $user['Ville']; ?></td>
+                <td><?= $user['Telephone']; ?></td>
+                <td><?= $user['Admin']; ?></td>
+                <td><?= $user['Autorisation']; ?></td>
+                <td>
+                    <form action="">
+                        <input type="text" name="user" value="<?= $user['Id']; ?>" class="hidden">
+                        <input type="text" name="Autorisation" value="<?= $user['Autorisation']; ?>" class="hidden">
+                        <button class="button button-cancel"><i class="fas fa-minus-circle" aria-hidden="true"></button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>

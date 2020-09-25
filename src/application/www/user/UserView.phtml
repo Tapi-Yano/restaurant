@@ -1,0 +1,55 @@
+<h2><i class="fa fa-user" aria-hidden="true"></i> Création d'un compte client </h2>
+
+<form action="" method="post" class="generic-form">
+            <fieldset>
+        <legend>
+            <i class="fa fa-book" aria-hidden="true"></i> Identité et coordonnées
+        </legend>
+        <ul>
+            <li>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" value="">
+            </li>
+            <li>
+                <label for="prenom">Prenom :</label>
+                <input type="text" id="prenom" name="prenom" value="">
+            </li>
+            <li>
+                <label for="adresse">Adresse :</label>
+                <textarea name="adresse" id="adresse" cols="30" rows="5"></textarea>
+            </li>
+            <li>
+                <label for="born_date">Date de naissance :</label>
+                <input type="date" id="born_date" name="date_de_naissance" value="">
+            </li>
+            <li>
+                <label for="city">Ville :</label>
+                <input type="text" id="city" name="ville" value="">
+            </li>
+            <li>
+                <label for="codePostal">Code Postal :</label>
+                <input type="text" id="codePostal" name="code_postal" value="" placeholder="ex: 75018">
+            </li>
+            <li>
+                <label for="tel">Télephone :</label>
+                <input type="text" id="tel" name="telephone" value="">
+            </li>
+            </fieldset>
+            <fieldset>
+                <legend>
+                <i class="fas fa-lock"></i> Informations d'autendification
+                </legend>
+                <ul>
+                    <li>
+                        <label for="mail">E-mail :</label>
+                        <input type="text" id="mail" name="e_mail" value="">
+                    </li>
+                    <li>
+                        <label for="mdp">Mot de passe :</label>
+                        <input type="password" id="mdp" name="mot_de_passe" value="">
+                    </li>
+                </ul>
+            </fieldset>
+            <button class="button button-primary" type="submit" id="creer">Creer le compte</button>
+            <button class="button button-cancel" type="reset" id="supprimer">Annuler</button>
+    </fom>

@@ -1,0 +1,21 @@
+
+<table class="generic-table meal-list">
+    <?php if(!isset($_SESSION['connexion'])){ ?>
+        <caption>Carte du restaurant</caption>
+    <?php }elseif($_SESSION['admin']){ ?>
+        <caption>Nos Produits</caption>
+    <?php }else{ ?>
+        <caption>Cliquez sur commander pour effectuer votre commande!</caption>
+    <?php } ?>
+        <tbody>
+        <!-- Code HTML à écrire -->
+            <?php foreach($this->viewData['variables']['products'] as $product): ?>
+                <tr>
+                    <td><img src="<?= $wwwUrl ?>/images/meals/<?= $product['Photo'] ?>" alt="<?= $product['Name'] ?>"></td>
+                    <td><strong><?= $product['Name'] ?></strong>
+                    <p><?= $product['Description'] ?></p></td>
+                    <td><?= $product['SalePrice'] ?>€</td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+</table>

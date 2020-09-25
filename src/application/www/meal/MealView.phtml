@@ -1,0 +1,20 @@
+<h2><i class="fas fa-shopping-cart"></i> Passer votre commande</h2>
+<table class="generic-table meal-list">
+        <caption>Votre choix</caption>
+    <tbody>
+        <!-- Code HTML à écrire -->
+        <?php foreach($this->viewData['variables']['products'] as $product): ?>
+        <tr>
+            <td><img src="<?= $wwwUrl ?>/images/meals/<?= $product['Photo'] ?>" alt="<?= $product['Name'] ?>"></td>
+            <td><strong><?= $product['Name'] ?></strong>
+            <p><?= $product['Description'] ?></p></td>
+            <td><?= $product['SalePrice'] ?>€</td>
+                <?php if(isset($_SESSION['connexion'])): ?>
+            <td><a class="button button-second" href="<?= $requestUrl ?>">Détails</a></td>
+                <?php endif; ?>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+            <button class="button button-primary" type="submit" id="creer">Valider</button>
+            <button class="button button-cancel" type="submit" id="supprimer">Annuler</button>

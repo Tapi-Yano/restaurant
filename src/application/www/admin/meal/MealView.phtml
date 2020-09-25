@@ -1,0 +1,49 @@
+<h2>Liste des bons de commandes</h2>
+    <fieldset class="fieldset" id="">
+        <legend>
+            <h2><i class="fas fa-shopping-cart"></i> Commande(s)</h2>
+        </legend>
+            <table class="generic-table meal-list" id="panier">
+                <thead>
+                    <tr style="color:green">
+                        <th >N° Client</th>
+                        <th>Client</th>
+                        <th>N° de commande</th>
+                        <th>Date de la commande </th>
+                        <th>Total de la commande</th>
+                        <th>Détails</th>
+                    </tr>
+                </thead>
+                <tbody id="parentButton">
+                <?php foreach($coms as $com): ?>
+                    <tr>
+                        <td><?= $com['IdUser']; ?></td>
+                        <td><?= $com['Nom']; ?> <?= $com['Prenom']; ?></td>
+                        <td><?= $com['Id']; ?></td>
+                        <td><?= $com['DateOrder']; ?></td>
+                        <td><?= $com['TotalPrice']; ?> €</td>
+                        <td>
+                            <button class="btnShowPanier" idCommande="<?= $com['Id'] ?>" style="background-color:green;color:white"><i class="fas fa-sign-out-alt"></i></button>
+                                <!-- balise tbody pour afficher ou retirer les details de la commande  -->
+                                <!-- très important la balise table n'accepte pas les div -->
+                                <tbody class="hide" id="detailsProd_<?= $com['Id'] ?>"> 
+                                    <?php foreach($com['prod'] as $prod): ?>  
+                                    <tr style="color:red">
+                                        <th>Nom du produit</th>
+                                        <th>Quantités</th>
+                                        <th>prix unitaire</th>
+                                    </tr>
+                                    <!-- on utilise $com car on reprend le tableau dans le tableau pour ajouter une nouvelle ligne -->
+                                    <tr>
+                                        <td><?= $prod['Name']; ?></td>
+                                        <td><?= $prod['Quantites']; ?></td>
+                                        <td><?= $prod['Prix']; ?> €</td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+    </fieldset>

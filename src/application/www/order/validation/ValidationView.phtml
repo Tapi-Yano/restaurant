@@ -1,0 +1,29 @@
+    <fieldset class="fieldset" id="">
+                <legend>
+                <h2><i class="fas fa-shopping-cart"></i> Récapitulatif de votre panier</h2>
+                </legend>
+                <table class="generic-table meal-list" id="panier">
+                    <thead>
+                        <tr>
+                            <th>Produit(s)</th>
+                            <th>Quantité(s)</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parentButton">
+                    <?php foreach($newPanier as $panier): ?>
+                    <tr>
+                    <td><?= $panier['name'] ?></td>
+                    <td><?= $panier['qttProd'] ?></td>
+                    <td><?= $panier['prixT'] ?> €</td>
+                    </tr>
+
+                    <?php endforeach; ?>
+                       
+                    </tbody>
+                </table>
+                <strong> PRIX TOTAL   : </strong><strong id="prixTotal"><?= $total ?></strong><strong> €</strong>
+     </fieldset>
+     <a class="button button-second" type="submit" id="payment" href="<?= $requestUrl ?>/order/payment/succes">Payer</a>
+     <button class="button button-cancel" type="reset" id="supprimer">Annuler</button>
+

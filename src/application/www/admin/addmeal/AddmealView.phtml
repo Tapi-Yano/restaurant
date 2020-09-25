@@ -1,0 +1,37 @@
+<h2><i class="fa fa-user" aria-hidden="true"></i> Ajouter un nouveau produit</h2>
+
+<form action="" method="post" class="generic-form">
+    <fieldset>
+        <legend>
+            <i class="fa fa-book" aria-hidden="true"></i> Nouveau produit
+        </legend>
+        <ul>
+            <li>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" value="">
+            </li>
+            <li>
+                <label for="photos">Choix photo</label>
+                <input type="file" name="photos" id="photos">
+            </li>
+            <li>
+                <label for="description">Description :</label>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+            </li>
+            <li>
+                <label for="prixAchat">Prix d'achat</label>
+                <input type="number" id="prixAchat" name="prixAchat" value="">
+            </li>
+            <li>
+                <label for="prix">Prix</label>
+                <input type="number" id="prix" name="prix" value="">
+            </li>
+            <li>
+                <label for="quantites">quantites en stock</label>
+                <input type="number" id="quantites" name="quantites" value="">
+            </li>
+        </ul>
+    </fieldset>
+            <button class="button button-primary" type="submit" id="creer">Ajouter</button>
+            <button class="button button-cancel" type="reset" id="supprimer">Annuler</button>
+</form>

@@ -1,0 +1,29 @@
+<h2><i class="fas fa-shopping-cart"></i> Total des reservations</h2>
+    <fieldset class="fieldset" id="">
+        <table class="generic-table meal-list">
+            <caption>Tables</caption>
+                <thead>
+                    <tr style="color:green">
+                        <th>N° Client</th>
+                        <th>Client</th>
+                        <th>N° de réservation</th>
+                        <th>Date de réservation</th>
+                        <th>Heure de réservation</th>
+                        <th>Nombre de couvert(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- Code HTML à écrire -->
+                <?php foreach($tables as $table): ?>
+                    <tr>
+                        <td><?= $table['IdUser'] ?></td>
+                        <td><?= $table['Nom'] ?> <?= $table['Prenom'] ?></td>
+                        <td><?= $table['Id'] ?></td>
+                        <td><?= $table['Date_de_reservation'] ?></td>
+                        <td><?= $table['Heure_de_reservation'] ?></td>
+                        <td><?= $table['Nombre_de_couverts'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+        </table>
+    </fieldset>
